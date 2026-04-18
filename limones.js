@@ -85,6 +85,7 @@ function detectarAtrapado(){
         }
         if(puntaje ==10) {
             alert("GANASTE")
+            clearInterval(intervalo);
         }
     }
 }
@@ -96,6 +97,7 @@ function detectarPiso(){
     mostrarenSpan("txtVidas",vidas);
     if(vidas <= 0){
         alert("GAME OVER");
+        clearInterval(intervalo);
     }
     }
 }
