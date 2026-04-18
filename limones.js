@@ -83,6 +83,9 @@ function detectarPiso(){
     aparecerLimon();
     vidas = vidas - 1;
     mostrarenSpan("txtVidas",vidas);
+    if(vidas <= 0){
+        alert("GAME OVER");
+    }
     }
 }
 
