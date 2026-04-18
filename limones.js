@@ -79,11 +79,11 @@ function detectarAtrapado(){
             velocidadcaida = 150;
             actualizarVelocidad();
         }
-        if(puntaje == 6){
+        else if(puntaje == 6){
             velocidadcaida = 100;
             actualizarVelocidad();
         }
-        if(puntaje ==10) {
+        else if(puntaje ==10) {
             alert("GANASTE")
             clearInterval(intervalo);
         }
@@ -95,7 +95,7 @@ function detectarPiso(){
     aparecerLimon();
     vidas = vidas - 1;
     mostrarenSpan("txtVidas",vidas);
-    if(vidas <= 0){
+    if(vidas == 0){
         alert("GAME OVER");
         clearInterval(intervalo);
     }
@@ -116,4 +116,21 @@ function aparecerLimon(){
 function actualizarVelocidad(){
     clearInterval(intervalo);
     intervalo = setInterval(bajarLimon, velocidadcaida);
+}
+
+function reiniciar(){
+    clearInterval(intervalo);
+
+    puntaje=0;
+    vidas = 3;
+    mostrarenSpan("txtPuntaje","0");
+    mostrarenSpan("txtVidas","3"),
+    
+    personajeX=canvas.width/2;
+    personajeY=canvas.height-ALTURA_PERSONAJE-ALTURA_SUELO;
+    limonX = canvas.width/2;
+    limonY = 0;
+    velocidadcaida = 200;
+
+    iniciar();
 }
