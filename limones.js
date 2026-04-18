@@ -12,7 +12,7 @@ let limonX = canvas.width/2;
 let limonY = 0;
 let puntaje = 0;
 let vidas = 3;
-let velocidadcaida=100;
+let velocidadcaida=1000;
 
 function dibujarSuelo (){
     ctx.fillStyle = "#ff0000";
@@ -33,12 +33,12 @@ function iniciar(){
 }
 
 function moverIzquierda(){
-    personajeX  = personajeX -10;
+    personajeX  = personajeX -30;
     actualizarPantalla();
 }
 
 function moverDerecha() {
-    personajeX = personajeX +10;
+    personajeX = personajeX +30;
     actualizarPantalla();
 }
 
@@ -74,8 +74,18 @@ function detectarAtrapado(){
         aparecerLimon();
         puntaje = puntaje + 1;
         mostrarenSpan("txtPuntaje",puntaje);
+        if(puntaje == 1 ){
+            velocidadcaida = 100;
+            alert(velocidadcaida);
+        }
+        else if(puntaje == 6){
+            velocidadcaida = 150;
+            alert(velocidadcaida);
+        }
+        else if(puntaje ==10) {
+            alert("GANASTE")
+        }
     }
-
 }
 
 function detectarPiso(){
