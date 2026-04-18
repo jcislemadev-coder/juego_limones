@@ -12,7 +12,8 @@ let limonX = canvas.width/2;
 let limonY = 0;
 let puntaje = 0;
 let vidas = 3;
-let velocidadcaida=1000;
+let velocidadcaida=200;
+let intervalo;
 
 function dibujarSuelo (){
     ctx.fillStyle = "#ff0000";
@@ -25,7 +26,7 @@ function dibujarPersonaje(){
 }
 
 function iniciar(){
-    setInterval(bajarLimon,velocidadcaida);//primer parametro una funcion, segundo parametro milisegundos
+    intervalo = setInterval(bajarLimon,velocidadcaida);//primer parametro una funcion, segundo parametro milisegundos
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
@@ -74,15 +75,15 @@ function detectarAtrapado(){
         aparecerLimon();
         puntaje = puntaje + 1;
         mostrarenSpan("txtPuntaje",puntaje);
-        if(puntaje == 1 ){
-            velocidadcaida = 100;
-            alert(velocidadcaida);
-        }
-        else if(puntaje == 6){
+        if(puntaje == 3 ){
             velocidadcaida = 150;
-            alert(velocidadcaida);
+            actualizarVelocidad();
         }
-        else if(puntaje ==10) {
+        if(puntaje == 6){
+            velocidadcaida = 100;
+            actualizarVelocidad();
+        }
+        if(puntaje ==10) {
             alert("GANASTE")
         }
     }
@@ -108,4 +109,9 @@ function aparecerLimon(){
     limonX= generarAleatorio(0,canvas.width-ANCHO_LIMON);
     limonY=0;
     actualizarPantalla();
+}
+
+function actualizarVelocidad(){
+    clearInterval(intervalo);
+    intervalo = setInterval(bajarLimon, velocidadcaida);
 }
