@@ -12,6 +12,7 @@ let limonX = canvas.width/2;
 let limonY = 0;
 let puntaje = 0;
 let vidas = 3;
+let velocidadcaida=100;
 
 function dibujarSuelo (){
     ctx.fillStyle = "#ff0000";
@@ -24,6 +25,7 @@ function dibujarPersonaje(){
 }
 
 function iniciar(){
+    setInterval(bajarLimon,velocidadcaida);//primer parametro una funcion, segundo parametro milisegundos
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
