@@ -11,7 +11,7 @@ let personajeY=canvas.height-ALTURA_PERSONAJE-ALTURA_SUELO;
 let limonX = canvas.width/2;
 let limonY = 0;
 let puntaje = 0;
-let vidas = 3;
+let vidas = 2;
 let velocidadcaida=200;
 let intervalo;
 
@@ -21,7 +21,7 @@ function dibujarSuelo (){
 }
 
 function dibujarPersonaje(){
-    ctx.fillStyle = "#5f9b26";
+    ctx.fillStyle = "#da1515";
     ctx.fillRect(personajeX,personajeY,ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
 
@@ -96,7 +96,7 @@ function detectarPiso(){
     vidas = vidas - 1;
     mostrarenSpan("txtVidas",vidas);
     if(vidas == 0){
-        alert("GAME OVER");
+        alert("JUEGO FINALIZADO");
         clearInterval(intervalo);
     }
     }
