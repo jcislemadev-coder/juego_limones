@@ -1,31 +1,107 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
   text-align: center;
   margin: 0;
   padding: 20px;
 }
 
 .contenedor {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: auto;
 }
 
+/* HEADER */
+.header {
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #facc15;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.autor {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* CANVAS */
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
+  background: radial-gradient(circle, #111827, #020617);
+  border: 4px solid #38bdf8;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
   display: block;
   margin: 20px auto;
 }
 
+/* PANEL */
 .panel {
   margin: 20px 0;
 }
 
-.botones button {
-  margin: 5px;
-  padding: 10px 16px;
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  min-width: 120px;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.valor {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+/* BOTONES */
+.botones {
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 8px;
+  padding: 12px 20px;
   font-size: 16px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+.reset {
+  background: #f43f5e;
+  color: white;
+}
+
+.reset:hover {
+  background: #e11d48;
 }
